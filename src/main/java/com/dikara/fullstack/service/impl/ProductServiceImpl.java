@@ -9,6 +9,8 @@ import com.dikara.fullstack.service.ProductService;
 import com.dikara.fullstack.specification.ProductSpecification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +31,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productsList", key = "#name + ':' + #minPrice + ':' + #maxPrice + ':' + #page + ':' + #limit")
     public Page<ProductResponse> getProducts(
             String name,
             BigDecimal minPrice,
@@ -54,6 +57,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productDetail", key = "#id")
     public ProductResponse getById(Long id) {
         log.info("Fetching product by id={}", id);
 
@@ -67,6 +71,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @CacheEvict(cacheNames = {"productsList", "productDetail"}, allEntries = true)
     public ProductResponse create(ProductRequest request) {
         log.info("Creating new product name={}", request.getName());
 
@@ -83,6 +88,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @CacheEvict(cacheNames = {"productsList", "productDetail"}, allEntries = true)
     public ProductResponse update(Long id, ProductRequest request) {
         log.info("Updating product id={}", id);
 
@@ -103,6 +109,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @CacheEvict(cacheNames = {"productsList", "productDetail"}, allEntries = true)
     public void delete(Long id) {
         log.info("Deleting product id={}", id);
 
