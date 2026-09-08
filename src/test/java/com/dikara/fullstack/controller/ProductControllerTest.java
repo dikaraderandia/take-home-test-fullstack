@@ -3,7 +3,7 @@ package com.dikara.fullstack.controller;
 import com.dikara.fullstack.dto.request.ProductRequest;
 import com.dikara.fullstack.dto.response.ProductResponse;
 import com.dikara.fullstack.exception.ResourceNotFoundException;
-import com.dikara.fullstack.service.ProductService;
+import com.dikara.fullstack.service.impl.ProductAsyncService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,13 +16,14 @@ import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -30,13 +31,13 @@ import static org.mockito.Mockito.when;
 class ProductControllerTest {
 
     @Mock
-    private ProductService productService;
+    private ProductAsyncService productAsyncService;
 
     private ProductController productController;
 
     @BeforeEach
     void setUp() {
-        productController = new ProductController(productService);
+        productController = new ProductController(productAsyncService);
     }
 
     private ProductResponse sampleProduct(Long id) {
@@ -55,13 +56,13 @@ class ProductControllerTest {
         Page<ProductResponse> page =
                 new PageImpl<>(List.of(sampleProduct(1L), sampleProduct(2L)));
 
-        when(productService.getProducts(isNull(), isNull(), isNull(), eq(0), eq(10)))
-                .thenReturn(page);
+        when(productAsyncService.getProductsAsync(isNull(), isNull(), isNull(), eq(0), eq(10)))
+                .thenReturn(CompletableFuture.completedFuture(page));
 
         ResponseEntity<Page<ProductResponse>> response =
-                productController.getProducts(null, null, null, 0, 10);
+                productController.getProducts(null, null, null, 0, 10).join();
 
-        verify(productService).getProducts(null, null, null, 0, 10);
+        verify(productAsyncService).getProductsAsync(null, null, null, 0, 10);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(2, response.getBody().getContent().size());
@@ -71,8 +72,13 @@ class ProductControllerTest {
     void getProducts_withFilters_shouldPassParametersToService() {
         Page<ProductResponse> page = new PageImpl<>(List.of(sampleProduct(1L)));
 
-        when(productService.getProducts("shirt", new BigDecimal("10"), new BigDecimal("100"), 1, 5))
-                .thenReturn(page);
+        when(productAsyncService.getProductsAsync(
+                "shirt",
+                new BigDecimal("10"),
+                new BigDecimal("100"),
+                1,
+                5
+        )).thenReturn(CompletableFuture.completedFuture(page));
 
         ResponseEntity<Page<ProductResponse>> response =
                 productController.getProducts(
@@ -81,9 +87,15 @@ class ProductControllerTest {
                         new BigDecimal("100"),
                         1,
                         5
-                );
+                ).join();
 
-        verify(productService).getProducts("shirt", new BigDecimal("10"), new BigDecimal("100"), 1, 5);
+        verify(productAsyncService).getProductsAsync(
+                "shirt",
+                new BigDecimal("10"),
+                new BigDecimal("100"),
+                1,
+                5
+        );
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(1, response.getBody().getContent().size());
@@ -94,11 +106,13 @@ class ProductControllerTest {
     @Test
     void getProductById_shouldReturnProduct() {
         ProductResponse product = sampleProduct(1L);
-        when(productService.getById(1L)).thenReturn(product);
+        when(productAsyncService.getByIdAsync(1L))
+                .thenReturn(CompletableFuture.completedFuture(product));
 
-        ResponseEntity<ProductResponse> response = productController.getProductById(1L);
+        ResponseEntity<ProductResponse> response =
+                productController.getProductById(1L).join();
 
-        verify(productService).getById(1L);
+        verify(productAsyncService).getByIdAsync(1L);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(1L, response.getBody().getId());
@@ -107,12 +121,13 @@ class ProductControllerTest {
 
     @Test
     void getProductById_whenNotFound_shouldPropagateException() {
-        when(productService.getById(999L))
-                .thenThrow(new ResourceNotFoundException("Product not found"));
+        CompletableFuture<ProductResponse> failed = new CompletableFuture<>();
+        failed.completeExceptionally(new ResourceNotFoundException("Product not found"));
+        when(productAsyncService.getByIdAsync(999L)).thenReturn(failed);
 
         assertThrows(
-                ResourceNotFoundException.class,
-                () -> productController.getProductById(999L)
+                CompletionException.class,
+                () -> productController.getProductById(999L).join()
         );
     }
 
@@ -125,11 +140,13 @@ class ProductControllerTest {
         request.setPrice(new BigDecimal("49.99"));
 
         ProductResponse product = sampleProduct(3L);
-        when(productService.create(any())).thenReturn(product);
+        when(productAsyncService.createAsync(any()))
+                .thenReturn(CompletableFuture.completedFuture(product));
 
-        ResponseEntity<ProductResponse> response = productController.createProduct(request);
+        ResponseEntity<ProductResponse> response =
+                productController.createProduct(request).join();
 
-        verify(productService).create(request);
+        verify(productAsyncService).createAsync(request);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(3L, response.getBody().getId());
@@ -146,11 +163,13 @@ class ProductControllerTest {
 
         ProductResponse updated = sampleProduct(1L);
         updated.setName("Shirt Updated");
-        when(productService.update(1L, request)).thenReturn(updated);
+        when(productAsyncService.updateAsync(1L, request))
+                .thenReturn(CompletableFuture.completedFuture(updated));
 
-        ResponseEntity<ProductResponse> response = productController.updateProduct(1L, request);
+        ResponseEntity<ProductResponse> response =
+                productController.updateProduct(1L, request).join();
 
-        verify(productService).update(1L, request);
+        verify(productAsyncService).updateAsync(1L, request);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Shirt Updated", response.getBody().getName());
@@ -162,12 +181,13 @@ class ProductControllerTest {
         request.setName("Shirt");
         request.setPrice(new BigDecimal("49.99"));
 
-        when(productService.update(999L, request))
-                .thenThrow(new ResourceNotFoundException("Product not found"));
+        CompletableFuture<ProductResponse> failed = new CompletableFuture<>();
+        failed.completeExceptionally(new ResourceNotFoundException("Product not found"));
+        when(productAsyncService.updateAsync(999L, request)).thenReturn(failed);
 
         assertThrows(
-                ResourceNotFoundException.class,
-                () -> productController.updateProduct(999L, request)
+                CompletionException.class,
+                () -> productController.updateProduct(999L, request).join()
         );
     }
 
@@ -175,21 +195,25 @@ class ProductControllerTest {
 
     @Test
     void deleteProduct_shouldReturnNoContent() {
-        ResponseEntity<Void> response = productController.deleteProduct(1L);
+        when(productAsyncService.deleteAsync(1L))
+                .thenReturn(CompletableFuture.completedFuture(null));
 
-        verify(productService).delete(1L);
+        ResponseEntity<Void> response = productController.deleteProduct(1L).join();
+
+        verify(productAsyncService).deleteAsync(1L);
 
         assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
     }
 
     @Test
     void deleteProduct_whenNotFound_shouldPropagateException() {
-        doThrow(new ResourceNotFoundException("Product not found"))
-                .when(productService).delete(999L);
+        CompletableFuture<Void> failed = new CompletableFuture<>();
+        failed.completeExceptionally(new ResourceNotFoundException("Product not found"));
+        when(productAsyncService.deleteAsync(999L)).thenReturn(failed);
 
         assertThrows(
-                ResourceNotFoundException.class,
-                () -> productController.deleteProduct(999L)
+                CompletionException.class,
+                () -> productController.deleteProduct(999L).join()
         );
     }
 }

@@ -4160,3 +4160,162 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2026-09-08 18:59:02.850 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-09-08 18:59:02.855 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-09-08 18:59:02.868 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 19:05:55.375 INFO  com.dikara.fullstack.TestApplicationTests - Starting TestApplicationTests using Java 22.0.1 with PID 3552 (started by X270 in D:\take home test axa\take-home-test-fullstack)
+2026-09-08 19:05:55.389 DEBUG com.dikara.fullstack.TestApplicationTests - Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-09-08 19:05:55.391 INFO  com.dikara.fullstack.TestApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 19:05:57.605 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:05:57.608 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 19:05:57.954 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 318 ms. Found 2 JPA repository interfaces.
+2026-09-08 19:05:58.005 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:05:58.008 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-08 19:05:58.067 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:05:58.068 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:05:58.069 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2026-09-08 19:05:59.351 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration' of type [org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-09-08 19:05:59.440 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.properties.SpringDocConfigProperties' of type [org.springdoc.core.properties.SpringDocConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-09-08 19:05:59.905 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-08 19:06:00.082 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-09-08 19:06:00.172 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-09-08 19:06:00.526 INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 19:06:00.592 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-08 19:06:01.075 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64b20d9c
+2026-09-08 19:06:01.079 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-08 19:06:01.178 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 19:06:01.227 INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-08 19:06:03.312 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-08 19:06:03.438 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 19:06:04.494 WARN  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-08 19:06:06.100 INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-09-08 19:06:08.478 INFO  com.dikara.fullstack.TestApplicationTests - Started TestApplicationTests in 14.038 seconds (process running for 22.625)
+2026-09-08 19:06:08.725 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 19:06:08.729 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-08 19:06:08.758 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 19:34:17.934 INFO  [background-preinit] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-09-08 19:34:18.005 INFO  [main] com.dikara.fullstack.TestApplication - Starting TestApplication using Java 22.0.1 with PID 14908 (D:\take home test axa\take-home-test-fullstack\target\classes started by X270 in D:\take home test axa\take-home-test-fullstack)
+2026-09-08 19:34:18.011 DEBUG [main] com.dikara.fullstack.TestApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-09-08 19:34:18.014 INFO  [main] com.dikara.fullstack.TestApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 19:34:19.706 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:34:19.710 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 19:34:19.996 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 268 ms. Found 2 JPA repository interfaces.
+2026-09-08 19:34:20.041 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:34:20.042 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-08 19:34:20.074 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:34:20.075 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:34:20.077 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-09-08 19:34:20.831 WARN  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration' of type [org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-09-08 19:34:20.871 WARN  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.properties.SpringDocConfigProperties' of type [org.springdoc.core.properties.SpringDocConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-09-08 19:34:21.431 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-08 19:34:21.472 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-08 19:34:21.477 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-08 19:34:21.479 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2026-09-08 19:34:21.903 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-09-08 19:34:21.919 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-08 19:34:21.922 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3832 ms
+2026-09-08 19:34:22.245 INFO  [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-08 19:34:22.353 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-09-08 19:34:22.407 INFO  [main] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-09-08 19:34:22.830 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 19:34:22.888 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-08 19:34:23.181 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12c78f36
+2026-09-08 19:34:23.187 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-08 19:34:23.254 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 19:34:23.289 INFO  [main] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-08 19:34:25.161 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-08 19:34:25.319 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 19:34:25.914 DEBUG [main] com.dikara.fullstack.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-09-08 19:34:25.916 DEBUG [main] com.dikara.fullstack.filter.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2026-09-08 19:34:26.014 WARN  [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-08 19:34:26.908 INFO  [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-09-08 19:34:28.475 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-08 19:34:28.537 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-09-08 19:34:28.559 INFO  [main] com.dikara.fullstack.TestApplication - Started TestApplication in 11.448 seconds (process running for 12.771)
+2026-09-08 19:53:01.549 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-08 19:53:01.564 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-08 19:53:01.564 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-09-08 19:53:01.997 INFO  [http-nio-8080-exec-1] com.dikara.fullstack.service.impl.AuthServiceImpl - Login attempt for user: dikara
+2026-09-08 19:53:03.196 INFO  [http-nio-8080-exec-1] com.dikara.fullstack.service.impl.AuthServiceImpl - Login success for user: dikara
+2026-09-08 19:53:24.783 INFO  [async-task-1] com.dikara.fullstack.service.impl.ProductAsyncService - Async: fetching products - page=0, limit=10
+2026-09-08 19:53:25.947 INFO  [async-task-1] com.dikara.fullstack.service.impl.ProductServiceImpl - Fetching products - name=null, minPrice=null, maxPrice=null, page=0, limit=10
+2026-09-08 19:53:25.992 INFO  [async-task-1] com.dikara.fullstack.service.impl.ProductServiceImpl - Found 1 products
+2026-09-08 19:53:41.046 INFO  [http-nio-8080-exec-4] com.dikara.fullstack.service.impl.AuthServiceImpl - Login attempt for user: dikara
+2026-09-08 19:53:41.189 INFO  [http-nio-8080-exec-4] com.dikara.fullstack.service.impl.AuthServiceImpl - Login success for user: dikara
+2026-09-08 19:53:58.738 INFO  [async-task-2] com.dikara.fullstack.service.impl.ProductAsyncService - Async: fetching products - page=0, limit=10
+2026-09-08 19:54:42.827 INFO  [background-preinit] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-09-08 19:54:42.943 INFO  [main] com.dikara.fullstack.TestApplication - Starting TestApplication using Java 22.0.1 with PID 1740 (D:\take home test axa\take-home-test-fullstack\target\classes started by X270 in D:\take home test axa\take-home-test-fullstack)
+2026-09-08 19:54:42.954 DEBUG [main] com.dikara.fullstack.TestApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-09-08 19:54:42.960 INFO  [main] com.dikara.fullstack.TestApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 19:54:45.362 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:54:45.366 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 19:54:45.817 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 423 ms. Found 2 JPA repository interfaces.
+2026-09-08 19:54:45.855 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-08 19:54:45.857 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-08 19:54:45.896 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:54:45.898 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.dikara.fullstack.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-08 19:54:45.899 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-09-08 19:54:46.929 WARN  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration' of type [org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-09-08 19:54:46.991 WARN  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.properties.SpringDocConfigProperties' of type [org.springdoc.core.properties.SpringDocConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-09-08 19:54:47.637 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-08 19:54:47.693 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-08 19:54:47.700 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-08 19:54:47.701 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2026-09-08 19:54:48.291 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-09-08 19:54:48.329 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-08 19:54:48.334 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5180 ms
+2026-09-08 19:54:48.712 INFO  [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-08 19:54:48.814 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-09-08 19:54:48.874 INFO  [main] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-09-08 19:54:49.445 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 19:54:49.511 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-08 19:54:49.954 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21ce3b22
+2026-09-08 19:54:49.957 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-08 19:54:50.023 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 19:54:50.063 INFO  [main] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-08 19:54:52.178 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-08 19:54:52.274 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 19:54:52.955 DEBUG [main] com.dikara.fullstack.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-09-08 19:54:52.957 DEBUG [main] com.dikara.fullstack.filter.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2026-09-08 19:54:53.093 WARN  [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-08 19:54:54.215 INFO  [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-09-08 19:54:55.918 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-08 19:54:55.964 WARN  [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-09-08 19:54:56.003 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 19:54:56.009 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-08 19:54:56.029 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 19:54:56.069 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-08 19:54:56.096 ERROR [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
