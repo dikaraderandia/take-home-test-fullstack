@@ -1,7 +1,7 @@
 package com.dikara.fullstack.filter;
 
 import com.dikara.fullstack.service.JwtService;
-import com.dikara.axa.service.impl.CustomUserDetailServiceImpl;
+import com.dikara.fullstack.service.impl.CustomUserDetailServiceImpl;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

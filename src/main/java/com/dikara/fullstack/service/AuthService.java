@@ -1,8 +1,8 @@
 package com.dikara.fullstack.service;
 
-import com.dikara.axa.dto.request.LoginRequest;
-import com.dikara.axa.dto.request.RegisterRequest;
-import com.dikara.axa.dto.response.LoginResponse;
+import com.dikara.fullstack.dto.request.LoginRequest;
+import com.dikara.fullstack.dto.request.RegisterRequest;
+import com.dikara.fullstack.dto.response.LoginResponse;
 
 public interface AuthService {
 

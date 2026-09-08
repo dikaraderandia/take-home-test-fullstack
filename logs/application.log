@@ -1720,3 +1720,119 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2026-09-08 14:42:28.865 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-09-08 14:42:28.872 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-09-08 14:42:28.914 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 15:25:34.604 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-09-08 15:25:34.729 INFO  com.dikara.fullstack.TestApplication - Starting TestApplication using Java 22.0.1 with PID 22468 (D:\take home test axa\take-home-test-fullstack\target\classes started by X270 in D:\take home test axa\take-home-test-fullstack)
+2026-09-08 15:25:34.767 DEBUG com.dikara.fullstack.TestApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-09-08 15:25:34.774 INFO  com.dikara.fullstack.TestApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 15:25:37.218 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 15:25:37.385 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 142 ms. Found 1 JPA repository interface.
+2026-09-08 15:25:38.030 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration' of type [org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-09-08 15:25:38.080 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.properties.SpringDocConfigProperties' of type [org.springdoc.core.properties.SpringDocConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-09-08 15:25:38.730 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-08 15:25:38.766 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-08 15:25:38.772 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-08 15:25:38.772 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2026-09-08 15:25:39.398 INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-09-08 15:25:39.424 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-08 15:25:39.428 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4469 ms
+2026-09-08 15:25:39.860 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-08 15:25:39.999 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-09-08 15:25:40.101 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-09-08 15:25:40.847 INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 15:25:40.928 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-08 15:25:41.406 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1592e540
+2026-09-08 15:25:41.410 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-08 15:25:41.490 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 15:25:41.538 INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-08 15:25:43.822 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-08 15:25:44.016 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 15:25:44.789 DEBUG com.dikara.fullstack.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-09-08 15:25:44.791 DEBUG com.dikara.fullstack.filter.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2026-09-08 15:25:44.872 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [D:\take home test axa\take-home-test-fullstack\target\classes\com\dikara\fullstack\controller\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authServiceImpl' defined in file [D:\take home test axa\take-home-test-fullstack\target\classes\com\dikara\fullstack\service\impl\AuthServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-09-08 15:25:44.874 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 15:25:44.879 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-08 15:25:44.905 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 15:25:44.911 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-08 15:25:44.963 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-08 15:25:45.168 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.dikara.fullstack.service.impl.AuthServiceImpl required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
+2026-09-08 15:26:34.376 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-09-08 15:26:34.448 INFO  com.dikara.fullstack.TestApplication - Starting TestApplication using Java 22.0.1 with PID 3628 (D:\take home test axa\take-home-test-fullstack\target\classes started by X270 in D:\take home test axa\take-home-test-fullstack)
+2026-09-08 15:26:34.463 DEBUG com.dikara.fullstack.TestApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-09-08 15:26:34.466 INFO  com.dikara.fullstack.TestApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 15:26:37.423 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 15:26:37.591 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 1 JPA repository interface.
+2026-09-08 15:26:38.456 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration' of type [org.springdoc.core.configuration.SpringDocSpecPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-09-08 15:26:38.519 WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springdoc.core.properties.SpringDocConfigProperties' of type [org.springdoc.core.properties.SpringDocConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [specificationStringPropertiesCustomizerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-09-08 15:26:39.422 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-08 15:26:39.500 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-08 15:26:39.508 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-08 15:26:39.509 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2026-09-08 15:26:40.613 INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-09-08 15:26:40.638 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-08 15:26:40.642 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5901 ms
+2026-09-08 15:26:41.234 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-08 15:26:41.395 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-09-08 15:26:41.564 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-09-08 15:26:42.633 INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 15:26:42.713 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-08 15:26:43.242 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4449b273
+2026-09-08 15:26:43.245 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-08 15:26:43.325 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 15:26:43.368 INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-08 15:26:45.789 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-08 15:26:45.924 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 15:26:46.642 DEBUG com.dikara.fullstack.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-09-08 15:26:46.643 DEBUG com.dikara.fullstack.filter.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2026-09-08 15:26:46.718 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [D:\take home test axa\take-home-test-fullstack\target\classes\com\dikara\fullstack\controller\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authServiceImpl' defined in file [D:\take home test axa\take-home-test-fullstack\target\classes\com\dikara\fullstack\service\impl\AuthServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-09-08 15:26:46.720 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 15:26:46.724 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-08 15:26:46.754 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-08 15:26:46.759 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-08 15:26:46.784 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-08 15:26:46.960 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.dikara.fullstack.service.impl.AuthServiceImpl required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
