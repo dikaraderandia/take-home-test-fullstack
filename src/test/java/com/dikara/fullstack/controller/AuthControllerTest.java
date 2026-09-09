@@ -85,7 +85,6 @@ class AuthControllerTest {
     void login_shouldReturnLoginResponse() {
         LoginResponse loginResponse = LoginResponse.builder()
                 .token("access-token")
-                .refreshToken("refresh-token")
                 .username("john")
                 .build();
 
@@ -104,7 +103,6 @@ class AuthControllerTest {
         assertEquals(200, response.getBody().getStatusCode());
         assertEquals("Login success", response.getBody().getMessage());
         assertEquals("access-token", response.getBody().getData().getToken());
-        assertEquals("refresh-token", response.getBody().getData().getRefreshToken());
         assertEquals("john", response.getBody().getData().getUsername());
     }
 
@@ -112,7 +110,6 @@ class AuthControllerTest {
     void login_whenServiceReturnsAuthData_shouldReturnSameInstance() {
         LoginResponse loginResponse = LoginResponse.builder()
                 .token("t")
-                .refreshToken("r")
                 .username("jane")
                 .build();
 
