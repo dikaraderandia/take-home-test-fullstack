@@ -8,9 +8,7 @@ public interface JwtService {
 
     String generateToken(UserDetails userDetails);
 
-    String generateRefreshToken(
-            UserDetails userDetails
-    );
+
 
     Claims validate(String token);
 

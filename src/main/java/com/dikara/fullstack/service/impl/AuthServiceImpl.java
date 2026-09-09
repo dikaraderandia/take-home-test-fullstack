@@ -86,16 +86,11 @@ public class AuthServiceImpl implements AuthService {
                         userDetails
                 );
 
-        String refreshToken =
-                jwtService.generateRefreshToken(
-                        userDetails
-                );
 
         log.info("Login success for user: {}", request.getUsername());
 
         return LoginResponse.builder()
                 .token(accessToken)
-                .refreshToken(refreshToken)
                 .username(userDetails.getUsername())
                 .build();
     }

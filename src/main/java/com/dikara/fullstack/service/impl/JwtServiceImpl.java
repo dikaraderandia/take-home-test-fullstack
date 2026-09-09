@@ -36,25 +36,6 @@ public class JwtServiceImpl implements JwtService {
                 .compact();
     }
 
-    @Override
-    public String generateRefreshToken(
-            UserDetails userDetails
-    ) {
-
-        return Jwts.builder()
-                .subject(
-                        userDetails.getUsername()
-                )
-                .issuedAt(new Date())
-                .expiration(
-                        new Date(
-                                System.currentTimeMillis()
-                                        + refreshExpiration
-                        )
-                )
-                .signWith(getSigningKey())
-                .compact();
-    }
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(
